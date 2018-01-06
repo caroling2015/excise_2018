@@ -9,6 +9,8 @@ import json
 def test_quaity_frozen():
     #测试委托交易后，未成交前，下单数量是否从balance中移到frozen,是则冻结成功
     asset = []
+
+    #123
     info = json.loads(Get_balance('BTM'))
     asset.append(info['result'])
     print asset
