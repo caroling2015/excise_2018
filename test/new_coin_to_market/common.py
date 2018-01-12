@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 import urllib2
 from conf import *
+import json
 
 req_headers = {
     'signature': '%s' % signature,
@@ -8,8 +9,6 @@ req_headers = {
     'Content-Type': 'application/json',
     'host': '%s' % host
 }
-
-# data = {"side":side,"quantity":quantity,"trading_pair":pair,"limit":limit,"type":"LIMIT"}
 
 def get(url):
     req = urllib2.Request(url,headers = req_headers)
