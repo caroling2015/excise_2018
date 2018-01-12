@@ -23,9 +23,9 @@ def BTC_order_fee(quantity,limit):
     min_rate = BTC_min_fee
     order_fee = quantity*limit*rate
     if order_fee > min_rate:
-        return order_fee
+        return (order_fee + (quantity*limit))
     else:
-        return min_rate
+        return (min_rate  + (quantity*limit))
 
 def ETP_order_fee(quantity,limit):
     min_rate = ETP_min_fee

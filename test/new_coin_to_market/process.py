@@ -23,13 +23,11 @@ def order_frozen(coin,data):
             asset.append(after_denominator['result'])
             print asset
             print each
-            fee = float(order_fee(denominator,each['quantity'],each['limit']))
+            fee = order_fee(denominator,each['quantity'],each['limit'])
             print fee
-
-
-
             print (int(asset[-3]['balance']) - int(asset[-1]['balance']))
             print (int(asset[-1]['frozen'])- int(asset[-3]['frozen']))
+
             if each['quantity'] == int(asset[-3]['balance']) - int(asset[-1]['balance']) and \
                             each['quantity'] ==  int(asset[-1]['frozen'])- int(asset[-3]['frozen']):
                     print "委托订单成功，委托数量已经冻结"
