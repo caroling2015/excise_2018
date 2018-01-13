@@ -20,7 +20,9 @@ coin = 'BTM'
 trading_pair = {'BTMBTC','BTMETH','BTMETP'}
 
 data = [
-    {"side":"BUY","quantity":500000000,"trading_pair":"BTMBTC","limit":50000000,"type":"LIMIT"}
+    {"side":"BUY","quantity":500000000,"trading_pair":"BTMBTC","limit":50000000,"type":"LIMIT"},
+    {"side":"SELL", "quantity":100000000, "trading_pair": "BTMBTC", "limit": 50000000, "type": "LIMIT"}
+
 ]
 
 ETP_min_fee = 0.01

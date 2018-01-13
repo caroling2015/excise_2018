@@ -11,38 +11,35 @@ def Cancel_orders_by_pair(pair):
     else:
         print "交易对%s当前没有挂单" % pair
 
-def ETH_order_fee(quantity,limit):
-    min_rate = ETH_min_fee
-    order_fee = quantity*limit*rate
-    if order_fee > min_rate:
-        return order_fee
-    else:
-        return min_rate
 
-def BTC_order_fee(quantity,limit):
-    min_rate = BTC_min_fee
-    order_fee = quantity*limit*rate
-    if order_fee > min_rate:
-        return (order_fee + (quantity*limit))
-    else:
-        return (min_rate  + (quantity*limit))
+def trade_fee(quantity,limit):
+    quantity = quantity / 1e8
+    limit = limit / 1e8
+    trade_fee = quantity*limit*rate
+    return trade_fee
 
-def ETP_order_fee(quantity,limit):
-    min_rate = ETP_min_fee
-    order_fee = quantity*limit*rate
-    if order_fee > min_rate:
-        return order_fee
-    else:
-        return min_rate
+def order_sum(quantity,limit):
+    quantity = quantity / 1e8
+    limit = limit / 1e8
+    sum = quantity*limit
+    return sum
 
 def order_fee(denominator,quantity,limit):
-    quantity = quantity/1e8
-    limit = limit/1e8
+    fee = trade_fee(quantity, limit)
     if denominator == 'ETH':
-        ETH_min_fee(quantity,limit)
+        if fee > ETH_min_fee:
+            return fee
+        else:
+            return ETH_min_fee
     elif denominator == 'BTC':
-        BTC_min_fee(quantity,limit)
+        if fee > BTC_min_fee:
+            return fee
+        else:
+            return BTC_min_fee
     elif denominator == 'ETP':
-        ETP_min_fee(quantity,limit)
+        if fee > ETP_min_fee:
+            return fee
+        else:
+            return ETP_min_fee
     else:
         print "交易对分母未定义"
