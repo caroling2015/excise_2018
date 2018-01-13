@@ -16,6 +16,7 @@ apikey='e34acfd4d2b45ea3af247786a9ceb387'
 # signature = 'wqxv97kzs13xgu5t963ns7fcx9d8xr6bvjxw8ep4ekq274uzspdaus'
 # apikey = '5559ab1a5fe117c6462351f7810adfff'
 
+
 coin = 'BTM'
 trading_pair = {'BTMBTC','BTMETH','BTMETP'}
 

@@ -8,6 +8,7 @@ def Cancel_orders(trading_pair,order_id):
     url = 'http://' + host + '/api/trader/order/%s/%s'%(trading_pair,order_id)
     return delete(url)
 
+
 def List_active_orders(trading_pair):
     url = 'http://' + host + '/api/trader/orders/%s'%trading_pair
     return get(url)

@@ -6,7 +6,6 @@ from own_operate import *
 import json
 
 def order_frozen(coin,data):
-
     #测试委托交易后，未成交前，下单数量是否从balance中移到frozen,是则冻结成功
     asset = []
     before_coin = json.loads(Get_balance(coin))

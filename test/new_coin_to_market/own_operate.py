@@ -12,7 +12,6 @@ def Cancel_orders_by_pair(pair):
         print "交易对%s当前没有挂单" % pair
 
 
-
 def trade_fee(quantity,limit):
     quantity = quantity / 1e8
     limit = limit / 1e8

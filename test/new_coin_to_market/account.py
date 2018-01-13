@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from common import *
 
+
 def Get_balance(coin):
     url = 'http://' + host + '/api/trader/balance/%s'%coin
     return get(url)

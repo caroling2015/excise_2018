@@ -10,6 +10,7 @@ req_headers = {
     'host': '%s' % host
 }
 
+
 def get(url):
     req = urllib2.Request(url,headers = req_headers)
     info = urllib2.urlopen(req)
